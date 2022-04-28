@@ -567,6 +567,7 @@ select {
 
 .lift-text__inner {
 	padding-left: 20px;
+	margin-left: 2px;
 	border-left: 2px solid #EEB042;
 	margin-bottom: 50px;
 }
