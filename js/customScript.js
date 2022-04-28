@@ -12,13 +12,6 @@ window.onscroll = function () {
 }
 
 
-// аккордион
-$('.accordion').accordion({
-	heightStyle: 'content',
-	active: 0, // индекс открытой вкладки
-	header: '> .accordion-item > .accordion-header'
-});
-
 
 // плавная прокрутка по якорям
 $('a[href*=#]:not([href=#])').click(function () {
@@ -36,73 +29,6 @@ $('a[href*=#]:not([href=#])').click(function () {
 		}
 	}
 });
-
-
-//табы слева в карточке товара
-$(".product__tab").click(function () {
-	var tabVal = $(this).attr("data-tab");
-	$(this).addClass("active");
-	$(this).siblings().removeClass("active");
-	$(".product__box_" + tabVal).addClass("active");
-	$(".product__box_" + tabVal).siblings(".product__box").removeClass("active");
-});
-//табы снизу в карточке товара
-$(".card__tab").click(function () {
-	var tabVal = $(this).attr("data-tab");
-	$(this).addClass("active");
-	$(this).siblings().removeClass("active");
-	$(".card__box_" + tabVal).addClass("active");
-	$(".card__box_" + tabVal).siblings(".card__box").removeClass("active");
-});
-
-
-// Попап дефолтный
-let pop = $('.popup')
-$('.popup__toggle').click(function () {
-	pop.addClass('_active')
-})
-pop.click(function (event) {
-	e = event || window.event
-	if (e.target == this) {
-		$(pop).removeClass('_active')
-	}
-})
-$('.popup__close').click(function () {
-	pop.removeClass('_active')
-})
-
-
-
-// счетчик товара в карточке товара
-let buttonCountPlus = document.getElementsByClassName("buttonCountPlus");
-let buttonCountMinus = document.getElementsByClassName("buttonCountMinus");
-let count = document.getElementsByClassName("buttonCountNumber");
-let countPost = document.getElementsByClassName("num");
-
-if (count) {
-	var p;
-	for (p = 0; p < buttonCountPlus.length; p++) {
-		buttonCountPlus[p].addEventListener("click", function () {
-			let itemCount = this.previousElementSibling.textContent;
-			if (itemCount < 100) {
-				itemCount++;
-				this.previousElementSibling.innerHTML = itemCount;
-				countPost.value = itemCount;
-			}
-		});
-	}
-	var m;
-	for (m = 0; m < buttonCountMinus.length; m++) {
-		buttonCountMinus[m].addEventListener("click", function () {
-			let itemCount = this.nextElementSibling.textContent;
-			if (itemCount > 1) {
-				itemCount--;
-				this.nextElementSibling.innerHTML = itemCount;
-				countPost.value = itemCount;
-			}
-		});
-	}
-}
 
 
 // слайдер slick
@@ -286,7 +212,6 @@ const isMobile = {
 		);
 	},
 };
-
 if (isMobile.any()) {
 	document.body.classList.add("touch");
 } else {
