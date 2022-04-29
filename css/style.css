@@ -630,7 +630,7 @@ select {
 }
 
 .new-next:after {
-	content: url(../images/icon/arrow-full-right.svg);
+	content: url(../images/icon/arrow-full-right-yellow.svg);
 	display: block;
 	width: 36px;
 	position: absolute;
